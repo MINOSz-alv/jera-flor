@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Registrarse - Josbet</title>
+
+  <!-- CSS servido por Flask -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="form-page">
+
+  <main class="center-card">
+    <h2>Crear cuenta</h2>
+
+    <!-- Apunta a la ruta Flask /register -->
+    <form method="POST" action="{{ url_for('register') }}">
+
+      <label>Nombre
+        <!-- Backend espera: nombre -->
+        <input type="text" name="nombre" required>
+      </label>
+
+      <label>Correo
+        <!-- Backend espera: correo -->
+        <input type="email" name="correo" required>
+      </label>
+
+      <label>Contraseña
+        <!-- Backend espera: contrasena -->
+        <input type="password" name="contrasena" required>
+      </label>
+
+      <div class="btn-row">
+        <button class="btn primary" type="submit">Registrarse</button>
+
+        <!-- Regresa al login Flask -->
+        <a class="btn" href="{{ url_for('login') }}">Ya tengo cuenta</a>
+      </div>
+
+    </form>
+  </main>
+
+</body>
+</html>

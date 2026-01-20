@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Iniciar sesión - Josbet</title>
+
+  <!-- Si usas Flask, lo correcto es cargar así los estilos -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="form-page">
+
+  <main class="center-card">
+    <h2>Iniciar sesión</h2>
+
+    <!-- Apunta a la ruta Flask /login -->
+    <form method="POST" action="{{ url_for('login') }}">
+
+      <label>Correo
+        <!-- Debe llamarse correo -->
+        <input type="email" name="correo" required>
+      </label>
+
+      <label>Contraseña
+        <!-- Debe llamarse contrasena -->
+        <input type="password" name="contrasena" required>
+      </label>
+
+      <div class="btn-row">
+        <button class="btn primary" type="submit">Entrar</button>
+
+        <!-- Apunta a la ruta Flask de registro -->
+        <a class="btn" href="{{ url_for('register') }}">Crear cuenta</a>
+      </div>
+
+    </form>
+  </main>
+
+</body>
+</html>
